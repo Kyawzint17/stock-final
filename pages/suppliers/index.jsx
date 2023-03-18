@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react'
 export default function Home({ suppliers }) {
 
   function deleteSupplier(id) {
-    fetch(`/api/supplier/${id}`,
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/supplier/${id}`,
       {
         method: 'DELETE'
       })
@@ -65,7 +65,7 @@ export default function Home({ suppliers }) {
   )
 }
 export async function getServerSideProps() {
-  const res = await fetch(`http://localhost:3000/api/supplier/`)
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/suppliers/`)
   const suppliers = await res.json()
   console.debug('supplier 1', suppliers)
   return { props: { suppliers } }

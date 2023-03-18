@@ -38,11 +38,12 @@ export default function AddSupplierPage() {
                 <label htmlFor="name">Name</label><br />
                 <input id="name" {...register("name")} placeholder="Supplier Name" /><br />
 
-                <label htmlFor="address">Address</label>
-                <textarea id="address" {...register("address")} placeholder="Supplier Address" /><br />
+                <label htmlFor="address">Address</label><br />
+                <input id="address" {...register("address")} placeholder="Supplier Address" /><br />
                 
                 <label htmlFor="phoneno">Phone Number</label><br />
                 <textarea id="phoneno" {...register("phoneno")} placeholder="Supplier Phno" /><br />
+                
                 <input type="submit" />
                 <p>{data}</p><br />
                 <Link href="/suppliers">Back</Link>

@@ -87,7 +87,7 @@ export default function Supplier({ supplier }) {
 // STEP 1: This function will be executed at the server before loading the page.
 export async function getServerSideProps({ params }) {
   console.debug('params', params)
-  const res = await fetch(`http://localhost:3000/api/supplier/${params.id}`)
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/supplier/${params.id}`)
   const supplier = await res.json()
   console.debug('supplier 1', supplier)
   return { props: { supplier } }
